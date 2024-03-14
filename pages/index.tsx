@@ -6,6 +6,9 @@ import { FaRegBell } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import FeedCard from "@/components/FeedCard";
 import { CredentialResponse, GoogleLogin } from "@react-oauth/google";
+import toast from "react-hot-toast";
+import { graphqlClient } from "@/client/api";
+import { verifyUserGoogleTokenQuery } from "@/graphql/queries/user";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -42,8 +45,21 @@ const sideBarMenuItems: TwitterSidebarMenu[] = [
 ];
 
 export default function Home() {
-  const handleLoginWithGoogle = (cred: CredentialResponse) => {
-    console.log("cred", cred);
+  const handleLoginWithGoogle = async (cred: CredentialResponse) => {
+    const googleToken = cred.credential;
+    if (!googleToken) return toast.error("Google token not found");
+
+    const { verifyGoogleToken } = await graphqlClient.request(
+      verifyUserGoogleTokenQuery,
+      {
+        token: googleToken,
+      }
+    );
+    toast.success("Verified succusfully!");
+    console.log("data", verifyGoogleToken);
+
+    if (verifyGoogleToken)
+      window.localStorage.setItem("__twitter_token__", verifyGoogleToken);
   };
   return (
     <main className={`flex min-h-screen   ${inter.className}`}>
