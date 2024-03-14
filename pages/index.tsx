@@ -5,6 +5,7 @@ import { IoSearchSharp } from "react-icons/io5";
 import { FaRegBell } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import FeedCard from "@/components/FeedCard";
+import { CredentialResponse, GoogleLogin } from "@react-oauth/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -41,6 +42,9 @@ const sideBarMenuItems: TwitterSidebarMenu[] = [
 ];
 
 export default function Home() {
+  const handleLoginWithGoogle = (cred: CredentialResponse) => {
+    console.log("cred", cred);
+  };
   return (
     <main className={`flex min-h-screen   ${inter.className}`}>
       <div className=" grid grid-cols-12 h-screen w-screen px-[6rem]">
@@ -71,7 +75,11 @@ export default function Home() {
           <FeedCard />
         </div>
 
-        <div className=" col-span-3">right</div>
+        <div className=" col-span-3">
+          <div className=" p-5 border border-gray-200 rounded-lg">
+            <GoogleLogin onSuccess={(cred) => handleLoginWithGoogle(cred)} />
+          </div>
+        </div>
       </div>
     </main>
   );
