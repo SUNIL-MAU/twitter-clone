@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Avatar from "./avator";
+import Avatar from "@/components/ui/avatar";
 
 const FeedCard = () => {
   return (
@@ -15,12 +15,12 @@ const FeedCard = () => {
     "
     >
       <div className="flex flex-row items-start gap-3">
-        <Avatar userId={"data.user.id"} />
+        <Avatar />
         <div>
           <div className="flex flex-row items-center gap-2">
             <p
               className="
-              text-white 
+
               font-semibold 
               cursor-pointer 
               hover:underline
@@ -47,7 +47,7 @@ const FeedCard = () => {
               thusday
             </span>
           </div>
-          <div className="text-white mt-1">
+          <div className=" mt-1">
             {/* {data.body} */}
             this is first twite
           </div>

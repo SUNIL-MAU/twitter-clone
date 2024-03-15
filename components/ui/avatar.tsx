@@ -1,23 +1,28 @@
+import { UserType } from "@/global/interfaces";
+import { useGetCurrentUser } from "@/hooks/user";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useCallback } from "react";
 
 interface AvatarProps {
-  userId: string;
+  user: UserType;
   isLarge?: boolean;
   hasBorder?: boolean;
 }
 
-const Avatar: React.FC<AvatarProps> = ({ userId, isLarge, hasBorder }) => {
+const Avatar: React.FC<AvatarProps> = ({ user, isLarge, hasBorder }) => {
   const router = useRouter();
 
-  //   const onClick = useCallback((event: any) => {
+  // const onClick = useCallback(
+  //   (event: any) => {
   //     event.stopPropagation();
 
   //     const url = `/users/${userId}`;
 
   //     router.push(url);
-  //   }, [router, userId]);
+  //   },
+  //   [router, userId]
+  // );
 
   return (
     <div
@@ -40,10 +45,7 @@ const Avatar: React.FC<AvatarProps> = ({ userId, isLarge, hasBorder }) => {
         }}
         alt="Avatar"
         // onClick={onClick}
-        // src={fetchedUser?.profileImage || '/images/placeholder.png'}
-        src={
-          "https://lh3.googleusercontent.com/a/ACg8ocKfo0M0AfegNyJpWuvWpGM4ma4gplW7BNpMh0Gr12qmyn0=s576-c-no"
-        }
+        src={(user?.profileImageUrl || "/images/placeholder.png") as string}
       />
     </div>
   );
