@@ -3,6 +3,7 @@ import GoogleLoginButton from "@/components/google-login-btn";
 import XLogo from "@/components/logo";
 import ProfileCover from "@/components/profile-cover";
 import SideNavBar from "@/components/sidenavbar";
+import { UserType } from "@/global/interfaces";
 import { useGetCurrentUser } from "@/hooks/user";
 
 const HomePage = () => {
@@ -15,8 +16,8 @@ const HomePage = () => {
         <SideNavBar />
         {user ? <ProfileCover user={user} /> : null}
       </div>
-      <div className=" col-span-6 border-l border-r border-gray-200">
-        <FeedCard />
+      <div className=" col-span-6 border-[0.9px] border-l-gray-200 border-r-gray-200">
+        <FeedCard user={user as UserType} />
       </div>
       <div className=" col-span-3">{!user ? <GoogleLoginButton /> : null}</div>
     </div>
