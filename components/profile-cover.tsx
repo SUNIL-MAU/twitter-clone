@@ -2,6 +2,7 @@ import PopoverContentCard from "@/components/popover-content-card";
 import { Popover, PopoverTrigger } from "@/components/ui/popover";
 import { UserType } from "@/global/interfaces";
 import { HiDotsHorizontal } from "react-icons/hi";
+
 import Avatar from "@/components/ui/avatar";
 
 const ProfileCover = ({ user }: { user: UserType }) => {
@@ -18,6 +19,7 @@ const ProfileCover = ({ user }: { user: UserType }) => {
             <HiDotsHorizontal />
           </span>
           <PopoverContentCard
+            sideOffset={20}
             menuList={[
               { title: "Add an existing account" },
               { title: "Log out @sunilmaurya7127" },

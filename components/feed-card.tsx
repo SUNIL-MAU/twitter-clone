@@ -7,6 +7,8 @@ import { BiRepost } from "react-icons/bi";
 import { IoStatsChart } from "react-icons/io5";
 import { CiBookmark } from "react-icons/ci";
 import { MdIosShare } from "react-icons/md";
+import { Popover, PopoverTrigger } from "@/components/ui/popover";
+import PopoverContentCard from "@/components/popover-content-card";
 
 interface FeedCardProps {
   user: UserType;
@@ -18,7 +20,7 @@ const FeedCard = ({ user }: FeedCardProps) => {
       <div className="  col-span-1">
         <Avatar user={user} />
       </div>
-      <div className=" col-span-11  ">
+      <div className=" col-span-11 ml-1 ">
         <div className=" flex">
           <div className=" flex-1">
             <span>Harpreet Singh</span>
@@ -26,16 +28,31 @@ const FeedCard = ({ user }: FeedCardProps) => {
           </div>
 
           <div className="  ">
-            <HiDotsHorizontal />
+            <Popover>
+              <PopoverTrigger>
+                <HiDotsHorizontal />
+              </PopoverTrigger>
+              <PopoverContentCard
+                isArrow={false}
+                align={"end"}
+                sideOffset={-20}
+                alignOffset={-6}
+                menuList={[
+                  { title: "Add an existing account" },
+                  { title: "Log out @sunilmaurya7127" },
+                ]}
+              />
+            </Popover>
           </div>
         </div>
         <p className=" pt-2 pb-5">
-          {" "}
           How do I say to someone “Tu Ch*tiya hai kya?” But professionally?
         </p>
         <div className=" flex justify-between text-[18px] items-center pb-2">
           <div>
-            <LuMessageSquarePlus />
+            <span className=" p-1  bg-">
+              <LuMessageSquarePlus color={"red"} />
+            </span>
           </div>
           <div>
             <BiRepost />

@@ -1,16 +1,24 @@
+import React from "react";
 import { PopoverArrow, PopoverContent } from "@/components/ui/popover";
+import * as PopoverPrimitive from "@radix-ui/react-popover";
 
 type Menu = {
   title: string;
   icon?: React.ReactNode;
 };
-type PopoverContentCardProps = {
-  menuList: Menu[];
-};
 
-const PopoverContentCard = ({ menuList }: PopoverContentCardProps) => {
+interface PopoverContentCardProps extends PopoverPrimitive.PopperContentProps {
+  menuList: Menu[];
+  isArrow?: boolean;
+}
+
+const PopoverContentCard = ({
+  menuList,
+  isArrow = true,
+  ...props
+}: PopoverContentCardProps) => {
   return (
-    <PopoverContent sideOffset={20} className=" p-0 py-3 rounded-2xl ">
+    <PopoverContent {...props} className=" p-0 py-3 rounded-2xl ">
       {menuList.map((menu: Menu) => (
         <h5
           key={menu.title}
@@ -19,7 +27,9 @@ const PopoverContentCard = ({ menuList }: PopoverContentCardProps) => {
           {menu.icon ? <span>{menu.icon}</span> : null} {menu.title}
         </h5>
       ))}
-      <PopoverArrow width={12} height={10} className=" fill-white" />
+      {isArrow ? (
+        <PopoverArrow width={12} height={10} className=" fill-white" />
+      ) : null}
     </PopoverContent>
   );
 };
