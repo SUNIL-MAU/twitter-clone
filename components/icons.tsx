@@ -1,17 +1,14 @@
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
-const IconClass = " h-[30px] w-[30px] md:h-6 md:w-6";
-
 const Icons = {
-  image: (props: IconProps) => (
+  image: ({ className = " h-5 w-5" }: { className?: string }) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
       stroke-width="1.5"
       stroke="currentColor"
-      {...props}
-      className={IconClass}
+      className={className}
     >
       <path
         stroke-linecap="round"
@@ -21,15 +18,14 @@ const Icons = {
     </svg>
   ),
 
-  gif: (props: IconProps) => (
+  gif: ({ className = " h-5 w-5" }: { className?: string }) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
       stroke-width="1.5"
       stroke="currentColor"
-      {...props}
-      className={IconClass}
+      className={className}
     >
       <path
         stroke-linecap="round"
@@ -38,28 +34,46 @@ const Icons = {
       />
     </svg>
   ),
-  poll: (props: IconProps) => (
+  poll: ({ className = " h-5 w-5" }: { className?: string }) => (
     <svg
-      fill="#000000"
       width="800px"
       height="800px"
       viewBox="0 0 24 24"
-      {...props}
-      className={IconClass}
+      version="1.1"
       xmlns="http://www.w3.org/2000/svg"
+      className={`${className} stroke-blue-400`}
     >
-      <path d="M7 11h7v2H7zm0-4h10.97v2H7zm0 8h13v2H7zM4 4h2v16H4z" />
+      <g
+        id="🔍-Product-Icons"
+        stroke="none"
+        stroke-width="1"
+        fill="none"
+        className={` stroke-blue-400`}
+        fill-rule="evenodd"
+      >
+        <g
+          id="ic_fluent_poll_24_regular"
+          className={` stroke-blue-400`}
+          fill="#212121"
+          fill-rule="nonzero"
+        >
+          <path
+            d="M11.7518706,1.99956021 C13.2716867,1.99956021 14.5037411,3.23161462 14.5037411,4.75143076 L14.5037411,19.2499651 C14.5037411,20.7697812 13.2716867,22.0018356 11.7518706,22.0018356 C10.2320544,22.0018356 9,20.7697812 9,19.2499651 L9,4.75143076 C9,3.23161462 10.2320544,1.99956021 11.7518706,1.99956021 Z M18.7518706,6.99956021 C20.2716867,6.99956021 21.5037411,8.23161462 21.5037411,9.75143076 L21.5037411,19.2499651 C21.5037411,20.7697812 20.2716867,22.0018356 18.7518706,22.0018356 C17.2320544,22.0018356 16,20.7697812 16,19.2499651 L16,9.75143076 C16,8.23161462 17.2320544,6.99956021 18.7518706,6.99956021 Z M4.75187055,11.9995602 C6.27168669,11.9995602 7.5037411,13.2316146 7.5037411,14.7514308 L7.5037411,19.2499651 C7.5037411,20.7697812 6.27168669,22.0018356 4.75187055,22.0018356 C3.23205441,22.0018356 2,20.7697812 2,19.2499651 L2,14.7514308 C2,13.2316146 3.23205441,11.9995602 4.75187055,11.9995602 Z M11.7518706,3.49956021 C11.0604815,3.49956021 10.5,4.06004175 10.5,4.75143076 L10.5,19.2499651 C10.5,19.9413541 11.0604815,20.5018356 11.7518706,20.5018356 C12.4432596,20.5018356 13.0037411,19.9413541 13.0037411,19.2499651 L13.0037411,4.75143076 C13.0037411,4.06004175 12.4432596,3.49956021 11.7518706,3.49956021 Z M18.7518706,8.49956021 C18.0604815,8.49956021 17.5,9.06004175 17.5,9.75143076 L17.5,19.2499651 C17.5,19.9413541 18.0604815,20.5018356 18.7518706,20.5018356 C19.4432596,20.5018356 20.0037411,19.9413541 20.0037411,19.2499651 L20.0037411,9.75143076 C20.0037411,9.06004175 19.4432596,8.49956021 18.7518706,8.49956021 Z M4.75187055,13.4995602 C4.06048154,13.4995602 3.5,14.0600417 3.5,14.7514308 L3.5,19.2499651 C3.5,19.9413541 4.06048154,20.5018356 4.75187055,20.5018356 C5.44325957,20.5018356 6.0037411,19.9413541 6.0037411,19.2499651 L6.0037411,14.7514308 C6.0037411,14.0600417 5.44325957,13.4995602 4.75187055,13.4995602 Z"
+            id="🎨-Color"
+            className={` stroke-blue-400`}
+          ></path>
+        </g>
+      </g>
     </svg>
   ),
-  emoji: (props: IconProps) => (
+  emoji: ({ className = " h-5 w-5" }: { className?: string }) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
       stroke-width="1.5"
       stroke="currentColor"
-      {...props}
-      className={IconClass}
+      className={className}
     >
       <path
         stroke-linecap="round"
@@ -68,33 +82,73 @@ const Icons = {
       />
     </svg>
   ),
-  schedule: (props: IconProps) => (
+  schedule: ({ className = " h-5 w-5" }: { className?: string }) => (
     <svg
       width="800px"
       height="800px"
-      viewBox="0 0 64 64"
-      xmlns="http://www.w3.org/2000/svg"
-      stroke-width="3"
-      stroke="#000000"
+      viewBox="0 0 24 24"
       fill="none"
-      {...props}
-      className={IconClass}
+      xmlns="http://www.w3.org/2000/svg"
+      className={`${className} stroke-blue-400`}
     >
-      <path d="M36.66,54.45H8.84A2.5,2.5,0,0,1,6.35,52V12.12A2.49,2.49,0,0,1,8.84,9.63H48.68a2.49,2.49,0,0,1,2.49,2.49v22.4" />
-      <line x1="6.35" y1="20.63" x2="51.17" y2="20.63" />
-      <line x1="16.46" y1="9.63" x2="16.46" y2="4.63" />
-      <line x1="40.42" y1="9.63" x2="40.42" y2="4.63" />
-      <circle cx="45.22" cy="45.44" r="12.43" />
-      <polyline points="45.22 36.7 45.22 45.82 49.57 49.16" />
+      <path
+        d="M9 20H6C3.79086 20 2 18.2091 2 16V7C2 4.79086 3.79086 3 6 3H17C19.2091 3 21 4.79086 21 7V10"
+        stroke="#000000"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        className={`${className} stroke-blue-400`}
+      />
+      <path
+        d="M8 2V4"
+        stroke="#000000"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        className={` stroke-blue-400`}
+      />
+      <path
+        d="M15 2V4"
+        stroke="#000000"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        className={` stroke-blue-400`}
+      />
+      <path
+        d="M2 8H21"
+        stroke="#000000"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        className={` stroke-blue-400`}
+      />
+      <path
+        d="M18.5 15.6429L17 17.1429"
+        stroke="#000000"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        className={` stroke-blue-400`}
+      />
+      <circle
+        cx="17"
+        cy="17"
+        r="5"
+        stroke="#000000"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        className={` stroke-blue-400`}
+      />
     </svg>
   ),
-  projects: (props: IconProps) => (
+  projects: ({ className = " h-5 w-5" }: { className?: string }) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="currentColor"
-      {...props}
-      className={IconClass}
+      className={className}
     >
       <path
         fillRule="evenodd"
@@ -104,13 +158,12 @@ const Icons = {
       <path d="M3 18.4v-2.796a4.3 4.3 0 0 0 .713.31A26.226 26.226 0 0 0 12 17.25c2.892 0 5.68-.468 8.287-1.335.252-.084.49-.189.713-.311V18.4c0 1.452-1.047 2.728-2.523 2.923-2.12.282-4.282.427-6.477.427a49.19 49.19 0 0 1-6.477-.427C4.047 21.128 3 19.852 3 18.4Z" />
     </svg>
   ),
-  code: (props: IconProps) => (
+  code: ({ className = " h-5 w-5" }: { className?: string }) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="currentColor"
-      {...props}
-      className={IconClass}
+      className={className}
     >
       <path
         fillRule="evenodd"
@@ -119,13 +172,12 @@ const Icons = {
       />
     </svg>
   ),
-  seen: (props: IconProps) => (
+  seen: ({ className = " h-5 w-5" }: { className?: string }) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="currentColor"
-      {...props}
-      className={IconClass}
+      className={className}
     >
       <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
       <path
