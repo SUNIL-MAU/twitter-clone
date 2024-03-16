@@ -9,6 +9,7 @@ import { CiBookmark } from "react-icons/ci";
 import { MdIosShare } from "react-icons/md";
 import { Popover, PopoverTrigger } from "@/components/ui/popover";
 import PopoverContentCard from "@/components/popover-content-card";
+import Icons from "@/components/icons";
 
 interface FeedCardProps {
   user: UserType;
@@ -16,21 +17,29 @@ interface FeedCardProps {
 
 const FeedCard = ({ user }: FeedCardProps) => {
   return (
-    <div className=" grid grid-cols-12 py-3 px-4 hover:bg-gray-200 border-[0.9px] border-b-gray-200 transition-all cursor-pointer">
+    <div className=" grid grid-cols-12 py-3 px-4 hover:bg-gray-100 border-[0.9px] border-b-gray-200 transition-all cursor-pointer">
       <div className="  col-span-1">
         <Avatar user={user} />
       </div>
       <div className=" col-span-11 ml-1 ">
         <div className=" flex">
-          <div className=" flex-1">
-            <span>Harpreet Singh</span>
-            <span>@hsingh</span>
+          <div className=" flex-1 flex items-center ">
+            <span className=" font-semibold hover:underline transition-all text-[15px] mr-1">
+              Harpreet Singh
+            </span>
+            <span className=" text-gray-400 font-medium  text-[15px]">
+              @hsingh &#x2022; 4h
+            </span>
           </div>
 
           <div className="  ">
             <Popover>
               <PopoverTrigger>
-                <HiDotsHorizontal />
+                <div className="group/parent  flex gap-[2px] items-center">
+                  <span className=" h-8 w-8 grid place-items-center  rounded-full transition-all group-hover/parent:bg-sky-100 ">
+                    <Icons.ellipsis />
+                  </span>
+                </div>
               </PopoverTrigger>
               <PopoverContentCard
                 isArrow={false}
@@ -45,27 +54,46 @@ const FeedCard = ({ user }: FeedCardProps) => {
             </Popover>
           </div>
         </div>
-        <p className=" pt-2 pb-5">
+        <p className="  pb-5 text-[15px] ">
           How do I say to someone “Tu Ch*tiya hai kya?” But professionally?
         </p>
-        <div className=" flex justify-between text-[18px] items-center pb-2">
-          <div>
-            <span className=" p-1  bg-">
-              <LuMessageSquarePlus color={"red"} />
+        <div className=" text-gray-500 font-medium flex justify-between text-[18px] items-center pb-2">
+          <div className="group/parent  flex gap-[2px] items-center">
+            <span className=" h-8 w-8 grid place-items-center  rounded-full transition-all group-hover/parent:bg-sky-100 ">
+              <Icons.reply />
+            </span>
+            <span className=" group-hover/parent:text-sky-500 text-[14px] ">
+              1.3k
             </span>
           </div>
-          <div>
-            <BiRepost />
+          <div className="group/parent  flex gap-[2px] items-center">
+            <span className=" h-8 w-8 grid place-items-center  rounded-full transition-all group-hover/parent:bg-green-200/25 ">
+              <Icons.repost />
+            </span>
+            <span className=" group-hover/parent:text-green-500 text-[14px] text-black/50 ">
+              1.3k
+            </span>
           </div>
-          <div>
-            <FaRegHeart />
+          <div className="group/parent  flex gap-[2px] items-center">
+            <span className=" h-8 w-8 grid place-items-center  rounded-full transition-all group-hover/parent:bg-red-100 ">
+              <Icons.heart />
+            </span>
+            <span className=" group-hover/parent:text-red-500 text-[14px] text-black/50 ">
+              1.3k
+            </span>
           </div>
-          <div>
-            <IoStatsChart />
+          <div className="group/parent  flex gap-[2px] items-center">
+            <span className=" h-8 w-8 grid place-items-center  rounded-full transition-all group-hover/parent:bg-sky-100 ">
+              <Icons.share />
+            </span>
+            <span className=" group-hover/parent:text-sky-500 text-[14px] ">
+              1.3k
+            </span>
           </div>
-          <div className=" flex gap-4 items-center">
-            <CiBookmark />
-            <MdIosShare />
+          <div className="group/parent  flex gap-[2px] items-center">
+            <span className=" h-8 w-8 grid place-items-center  rounded-full transition-all group-hover/parent:bg-sky-100 ">
+              <Icons.bookmark />
+            </span>
           </div>
         </div>
       </div>
