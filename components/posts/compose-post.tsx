@@ -25,7 +25,7 @@ export const IconWrapper = ({
   return (
     <div
       {...props}
-      className=" cursor-pointer text-blue-500 h-8 w-8 flex justify-center items-center  rounded-full hover:bg-blue-300/20 transition-all"
+      className=" cursor-pointer text-sky-500 h-8 w-8 flex justify-center items-center  rounded-full hover:bg-sky-300/20 transition-all"
     >
       {children}
     </div>
@@ -56,7 +56,7 @@ const ComposePost = ({ user }: ComposePostProps) => {
     console.log({ data });
   }
   return (
-    <div className=" grid grid-cols-12  py-3 px-4  border-[0.9px] border-b-gray-200 transition-all ">
+    <div className=" grid grid-cols-12  py-3 px-4 pb-0 border-[0.9px] border-b-gray-200 transition-all ">
       <div className="  col-span-1 pr-10">
         <Avatar user={user} />
       </div>
@@ -84,7 +84,7 @@ const ComposePost = ({ user }: ComposePostProps) => {
               )}
             />
 
-            <div className=" flex items-center  border-t border-gray-200 py-2 ">
+            <div className=" flex items-center  border-t border-gray-200 py-3 ">
               <div className=" flex-1 flex gap-2">
                 <IconWrapper onClick={() => console.log("hey")}>
                   <Icons.image />
@@ -102,7 +102,9 @@ const ComposePost = ({ user }: ComposePostProps) => {
                   <Icons.schedule />
                 </IconWrapper>
               </div>
-              <Button type="submit">Submit</Button>
+              <Button variant="primary" type="submit">
+                Post
+              </Button>
             </div>
           </form>
         </Form>

@@ -4,6 +4,7 @@ import { LuHome, LuUser2 } from "react-icons/lu";
 import { IoSearchSharp } from "react-icons/io5";
 import { FaRegBell } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
+import { Button } from "./ui/button";
 
 const sideBarMenuItems: TwitterSidebarMenu[] = [
   {
@@ -46,9 +47,9 @@ const SideNavBar = () => {
           </li>
         ))}
       </ul>
-      <button className=" bg-[#188CD8] mt-8 hover:bg-[#188CD8] rounded-full text-white font-bold text-base p-4 w-full ">
+      <Button variant="primary" className=" w-full py-6 mt-7">
         Post
-      </button>
+      </Button>
     </div>
   );
 };
