@@ -9,12 +9,13 @@ const queryClient = new QueryClient();
 
 const inter = Inter({ subsets: ["latin"] });
 export default function App({ Component, pageProps }: AppProps) {
+  console.log("CLIENT ID", process.env.GOOGLE_CLIENT_ID);
   return (
     <div className={inter.className}>
       <QueryClientProvider client={queryClient}>
         <GoogleOAuthProvider
           clientId={
-            "200585284365-4bjem56b24s996trefvf4egi1787827e.apps.googleusercontent.com"
+            process.env.GOOGLE_CLIENT_ID ? process.env.GOOGLE_CLIENT_ID : ""
           }
         >
           <Component {...pageProps} />
